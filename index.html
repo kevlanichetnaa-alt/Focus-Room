@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Study Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button id="modeToggle" class="mode-toggle"
+        title="Toggle Dark/Light Mode">🌙</button>
+
+    <!-- Fullscreen Focus Mode Toggle -->
+    <button id="fullscreenBtn" class="fullscreen-toggle"
+        title="Toggle Focus Mode">⛶</button>
+
+    <main>
+
+        <!-- Pomodoro Timer Card -->
+        <section class="card" id="timerCard">
+            <h2>Pomodoro Timer</h2>
+
+            <div class="timer-visual">
+                <svg width="112" height="112">
+                    <circle class="timer-bg" cx="56" cy="56" r="50" />
+                    <circle class="timer-progress" cx="56" cy="56" r="50" />
+                </svg>
+
+                <div class="timer-info">
+                    <span id="timerLabel">Study</span>
+                    <span id="timerDisplay">25:00</span>
+                </div>
+            </div>
+
+            <div class="timer-controls">
+                <button id="startTimerBtn">Start</button>
+                <button id="pauseTimerBtn">Pause</button>
+                <button id="resetTimerBtn">Reset</button>
+            </div>
+
+            <div class="pomodoro-counters">
+                <span>🎯 Sessions: <span id="sessionCount">0</span></span>
+                <span>🏆 Daily Goal: <span id="dailyGoalCount">0</span></span>
+            </div>
+        </section>
+
+        <!-- Motivational Quotes Card -->
+        <section class="card" id="quoteCard">
+            <h2>Motivational Quotes</h2>
+
+            <div class="quote-section">
+                <div id="quoteText" class="quote-text"></div>
+                <button id="changeQuoteBtn">New Quote</button>
+            </div>
+        </section>
+
+        <!-- Study Music Player Card -->
+        <section class="card" id="musicCard">
+            <h2>Study Music Player</h2>
+
+            <audio id="studyAudio"
+                src="https://cdn.pixabay.com/audio/2022/07/26/audio_c664fdd8cc.mp3"
+                loop preload="auto"></audio>
+
+            <div class="music-controls">
+                <button id="musicPlayBtn">▶️</button>
+                <button id="musicMuteBtn">🔈</button>
+            </div>
+
+            <span id="musicStatus" class="music-status">Paused</span>
+        </section>
+
+        <!-- To-Do List Card -->
+        <section class="card" id="todoCard">
+            <h2>To-Do List</h2>
+
+            <form id="todoForm">
+                <input type="text" id="todoInput"
+                    placeholder="Add a task..." autocomplete="off" />
+                <button type="submit">Add</button>
+            </form>
+
+            <ul id="todoList" class="todo-list"></ul>
+        </section>
+
+        <!-- Live Clock Card -->
+        <section class="card" id="clockCard">
+            <h2>Live Clock</h2>
+            <div id="clockDisplay" class="clock-display"></div>
+        </section>
+
+    </main>
+
+    <!-- Timer end sound alert -->
+    <audio id="alertAudio"
+        src="https://cdn.pixabay.com/audio/2022/03/15/audio_123a13d293.mp3"
+        preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
